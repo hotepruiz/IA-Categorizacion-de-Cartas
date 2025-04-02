@@ -1,0 +1,11 @@
+pip install opencv-python
+
+pip install opencv-python-headless
+pip install matplotlib
+
+pip install torch torchvision opencv-python
+pip install torch torchvision yolov5
+
+
+pip install ultralytics opencv-python
+
