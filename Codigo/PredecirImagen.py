@@ -16,11 +16,11 @@ for resultado in resultados:
         label = int(box.cls[0].item())  # Clase predicha
         
         # Dibujar bounding box
-        cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 8)
         
         # Etiqueta con clase y confianza
         texto = FuncionesExtra.ClasesANombre(label)
-        cv2.putText(imagen, texto, (x1, y1 - 10), cv2.FONT_HERSHEY_PLAIN,3, (0, 255, 0), 2)
+        cv2.putText(imagen, texto, (x1, y1 - 10), cv2.FONT_HERSHEY_PLAIN,3, (0, 255, 0), 5)
 
 # Mostrar imagen con detecciones
 FuncionesExtra.MostrarImagen(imagen)
