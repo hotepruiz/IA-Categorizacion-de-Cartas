@@ -2,7 +2,11 @@ from ultralytics import YOLO
 import cv2
 import matplotlib.pyplot as plt
 import FuncionesExtra 
+import os
 
+print("mierda")
+carpeta_actual=os.getcwd()
+print(carpeta_actual)
 #modelo
 model = YOLO("Modelo entrenado/best.pt")
 #camara
@@ -14,7 +18,7 @@ while True:
         break
     
     #----------------------------------------------------------------------------------
-    resultados=model.predict(fotograma)
+    resultados=model.predict(fotograma, imgsz=320) 
 
     imgProcesada=FuncionesExtra.DibujarCajas(fotograma, resultados)
     cv2.imshow("pene", imgProcesada)
