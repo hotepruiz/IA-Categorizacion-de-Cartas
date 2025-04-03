@@ -17,11 +17,10 @@ while True:
     resultados=model.predict(fotograma)
 
     imgProcesada=FuncionesExtra.DibujarCajas(fotograma, resultados)
-
     cv2.imshow("pene", imgProcesada)
-
+  
     #----------------------------------------------------------------------------------
-    if cv2.waitKey(1) & 0xFF == ord('q'):  # Presiona 'q' para salir
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # q para salir
         break
 
 cap.release()

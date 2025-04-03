@@ -24,11 +24,16 @@ def DibujarCajas(imagen, resultados):
             cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 2)
         
             # Etiqueta con clase y confianza
-            texto = ClasesANombre(label)
-            cv2.putText(imagen, texto, (x1, y1 - 10), cv2.FONT_HERSHEY_PLAIN,2, (0, 255, 0), 2)
+            nombreCarta = ClasesANombre(label)
+
+            confianza = box.conf[0]
+            texto_confianza = f"%: {confianza:.2f}"
+
+            cv2.putText(imagen, nombreCarta, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0, 255, 0), 2)
+            cv2.putText(imagen, texto_confianza, (x1, y1 - 30), cv2.FONT_HERSHEY_SIMPLEX,0.4, (0, 255, 0), 1)
 
     return imagen
-
+    
 
 #Clases y etiquetas-------------------------------------------------------------------------------------------------------------------
 def ClasesANombre(NumeroClase: int):
