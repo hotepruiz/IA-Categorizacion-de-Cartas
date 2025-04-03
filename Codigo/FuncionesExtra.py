@@ -21,11 +21,11 @@ def DibujarCajas(imagen, resultados):
             label = int(box.cls[0].item())  # Clase predicha
         
             # Dibujar bounding box
-            cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 8)
+            cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 2)
         
             # Etiqueta con clase y confianza
             texto = ClasesANombre(label)
-            cv2.putText(imagen, texto, (x1, y1 - 10), cv2.FONT_HERSHEY_PLAIN,3, (0, 255, 0), 5)
+            cv2.putText(imagen, texto, (x1, y1 - 10), cv2.FONT_HERSHEY_PLAIN,2, (0, 255, 0), 2)
 
     return imagen
 

@@ -1,6 +1,6 @@
-pip install opencv-python
 
-pip install opencv-python-headless
+pip install opencv-python opencv-contrib-python
+
 pip install matplotlib
 
 pip install torch torchvision opencv-python
