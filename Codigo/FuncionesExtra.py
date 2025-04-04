@@ -14,23 +14,30 @@ def MostrarImagen(imagen):
 
     
 def DibujarCajas(imagen, resultados):
+    labelsVistas = []
     for resultado in resultados:
         for box in resultado.boxes:
-            x1, y1, x2, y2 = map(int, box.xyxy[0])  # coordenadas caja
-            conf = box.conf[0].item()  # % confianza
-            label = int(box.cls[0].item())  # Clase predicha
+            if int(box.cls[0].item()) in labelsVistas:
+                pass
+            else:
+                x1, y1, x2, y2 = map(int, box.xyxy[0])  # coordenadas caja
+                label = int(box.cls[0].item())  # Clase predicha
         
-            # Dibujar bounding box
-            cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                # Dibujar bounding box
+                cv2.rectangle(imagen, (x1, y1), (x2, y2), (0, 255, 0), 2)
         
-            # Etiqueta con clase y confianza
-            nombreCarta = ClasesANombre(label)
+                # Etiqueta con clase y confianza
+                nombreCarta = ClasesANombre(label)
 
-            confianza = box.conf[0]
-            texto_confianza = f"%: {confianza:.2f}"
+                confianza = box.conf[0]
+                texto_confianza = f"%: {confianza:.2f}"
 
-            cv2.putText(imagen, nombreCarta, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0, 255, 0), 2)
-            cv2.putText(imagen, texto_confianza, (x1, y1 - 30), cv2.FONT_HERSHEY_SIMPLEX,0.4, (0, 255, 0), 1)
+                cv2.putText(imagen, nombreCarta, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0, 255, 0), 2)
+                cv2.putText(imagen, texto_confianza, (x1, y1 - 30), cv2.FONT_HERSHEY_SIMPLEX,0.4, (0, 255, 0), 1)
+            
+                labelsVistas.append(label)
+        
+    labelsVistas.clear()
 
     return imagen
     
