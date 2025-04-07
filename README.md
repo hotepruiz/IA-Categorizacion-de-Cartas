@@ -1,3 +1,5 @@
+Para probar lo del video sólo hay que correr el archivo ReconocimientoVideo.py en la carpeta Codigo/
+
 puse las dependencias más importantes
 en el dependencias.txt
 
