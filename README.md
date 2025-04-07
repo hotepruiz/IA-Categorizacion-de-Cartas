@@ -1,4 +1,7 @@
-Para probar lo del video sólo hay que correr el archivo ReconocimientoVideo.py en la carpeta Codigo/
+Para probar lo del video sólo hay que correr el archivo ReconocimientoVideo.py en la carpeta Codigo/.
+Con PredecirImagen.py podes poner una imagen en la carpeta principal y poner la ruta como parametro
+en el codigo
+
 
 puse las dependencias más importantes
 en el dependencias.txt
