@@ -2,3 +2,8 @@
 test/
 train/
 valid/
+kaggle.json
+testhotep.jpeg
+yolov8n.pt
+data.yaml
+kaggle_data.yaml
